@@ -10,6 +10,7 @@ A Resource of Magento Functions
 1. [Category](#category)
 2. [Product](#product)
 3. [User](#user)
+4. [Cart](#cart)
 
 ***
 
@@ -66,7 +67,7 @@ if (Mage::getSingleton('customer/session')->isLoggedIn()) {
 }
 ```
 
-#Cart
+##Cart
 ```php
 /* Get all the items in the cart */
 $cartItems = Mage::getSingleton('checkout/session')->getQuote()->getAllItems();
