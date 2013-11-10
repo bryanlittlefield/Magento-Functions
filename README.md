@@ -7,19 +7,16 @@ A Resource of Magento Functions
 ####Table of Contents
 ***
 
-1. [Catalog](#catalog)
-	* [Product](#product)
-	* [Category](#category)
-2. [User](#user)
+1. [Category](#category)
+2. [Product](#product)
+3. [User](#user)
 
 ***
 
 
-##Catalog
+##Category
 
-###Category
-
-###Product
+##Product
 
 ```php
 <!-- ************************* Fetch Product and Info ************************* -->
