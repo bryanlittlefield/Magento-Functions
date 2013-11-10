@@ -21,6 +21,4 @@ A Resource of Magento Functions
 
 ###Product
 
-=================
-
 ##User
