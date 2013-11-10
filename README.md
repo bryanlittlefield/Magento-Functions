@@ -7,9 +7,9 @@ A Resource of Magento Functions
 ####Table of Contents
 ***
 
-[Catalog](#catalog)
+1. [Catalog](#catalog)
 	* [Product](#product)
 	* [Category](#category)
-[User](#user)
+2. [User](#user)
 
 ***
