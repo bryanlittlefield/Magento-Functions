@@ -65,3 +65,15 @@ if (Mage::getSingleton('customer/session')->isLoggedIn()) {
  
 }
 ```
+
+#Cart
+```php
+/* Get all the items in the cart */
+$cartItems = Mage::getSingleton('checkout/session')->getQuote()->getAllItems();
+/* Iterate through the items */
+foreach ($cartItems as $item) {
+    /* Load the product and get the custom attribute */
+    Zend_Debug::dump(Mage::getModel('catalog/product')->load($item->getProduct()->getId())->getMyCustomAttribute());
+}
+```
+
