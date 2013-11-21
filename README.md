@@ -19,24 +19,25 @@ A Resource of Magento Functions
 
 ##Product
 
-####Fetch Product
-
+####Fetch Product Collection
 ```php
 
+$collection = Mage::getModel('catalog/product')
+              ->getCollection()
+              ->addAttributeToSelect('*')
+              ->addAttributeToSort('name', 'DESC')
+              ->setOrder('name', 'ASC');
+```
+
+####Magento Load Products
+```php
 Individual Product Helper
 --------------------------------------------------------------------------------------
 $_helper = $this->helper('catalog/output');
 $_product = $this->getProduct();
 
-Global Product Helper
+Load Product from Collection
 --------------------------------------------------------------------------------------
-$_product = Mage::getModel('catalog/product')->load($productid); //getting product object for particular product id
-$_product = Mage::getModel('catalog/product')->load($this->getProduct()->getId());
-$_attributes = $_product->getAttributes();
-```
-
-####Magento Load Product By Name / SKU / ID
-```php
 // Load by name
 $_product = Mage::getModel('catalog/product')->loadByAttribute('name', 'product_name');
 
