@@ -19,6 +19,8 @@ A Resource of Magento Functions
 
 ##Product
 
+####Fetch Product and Product Info
+
 ```php
 <!-- ************************* Fetch Product and Info ************************* -->
 <?php $_helper = $this->helper('catalog/output'); ?>
@@ -44,6 +46,20 @@ echo $_product->getThumbnailUrl(); //product's thumbnail image url
 echo $_product->getAvailability(); //product's thumbnail image url     
 ?>
 
+```
+
+####Magento Load Product By Name / SKU / ID
+
+```php
+// Load by name
+$_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Ruby Ring');
+$_product = Mage::getModel('catalog/product')->loadByAttribute('name', 'emerald earring');
+
+// Load by SKU
+$_product = Mage::getModel('catalog/product')->loadByAttribute('sku', 'Eram18j4');
+
+//Load by ID (just load):
+$_product = Mage::getModel('catalog/product')->load($productID);
 ```
 
 
