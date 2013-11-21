@@ -31,8 +31,8 @@ $_product = $this->getProduct();
 Global Product Helper
 --------------------------------------------------------------------------------------
 $_product = Mage::getModel('catalog/product')->load($productid); //getting product object for particular product id
-$product = Mage::getModel('catalog/product')->load($this->getProduct()->getId());
-$attributes = $_product->getAttributes();
+$_product = Mage::getModel('catalog/product')->load($this->getProduct()->getId());
+$_attributes = $_product->getAttributes();
 ```
 
 ####Magento Load Product By Name / SKU / ID
