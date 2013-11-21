@@ -19,19 +19,36 @@ A Resource of Magento Functions
 
 ##Product
 
-####Fetch Product and Product Info
+####Fetch Product
 
 ```php
-<!-- ************************* Fetch Product and Info ************************* -->
-<?php $_helper = $this->helper('catalog/output'); ?>
-<?php $_product = $this->getProduct(); ?>
-<!-- ======================================================================== -->
-<?php
-$model = Mage::getModel('catalog/product') //getting product model
-$_product = $model->load($productid); //getting product object for particular product id
-?>
 
+Individual Product Helper
+--------------------------------------------------------------------------------------
+$_helper = $this->helper('catalog/output');
+$_product = $this->getProduct();
 
+Global Product Helper
+--------------------------------------------------------------------------------------
+$_product = Mage::getModel('catalog/product')->load($productid); //getting product object for particular product id
+$product = Mage::getModel('catalog/product')->load($this->getProduct()->getId());
+$attributes = $_product->getAttributes();
+```
+
+####Magento Load Product By Name / SKU / ID
+```php
+// Load by name
+$_product = Mage::getModel('catalog/product')->loadByAttribute('name', 'product_name');
+
+// Load by SKU
+$_product = Mage::getModel('catalog/product')->loadByAttribute('sku', '234SKU93');
+
+//Load by ID (just load):
+$_product = Mage::getModel('catalog/product')->load($productID);
+```
+
+####Fetch Default Product Info
+```php
 <?php
 echo $_product->getShortDescription(); //product's short description
 echo $_product->getDescription(); // product's long description
@@ -45,27 +62,10 @@ echo $_product->getSmallImageUrl(); //product's small image url
 echo $_product->getThumbnailUrl(); //product's thumbnail image url
 echo $_product->getAvailability(); //product's thumbnail image url     
 ?>
-
-```
-
-####Magento Load Product By Name / SKU / ID
-
-```php
-// Load by name
-$_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Ruby Ring');
-$_product = Mage::getModel('catalog/product')->loadByAttribute('name', 'emerald earring');
-
-// Load by SKU
-$_product = Mage::getModel('catalog/product')->loadByAttribute('sku', 'Eram18j4');
-
-//Load by ID (just load):
-$_product = Mage::getModel('catalog/product')->load($productID);
-
 ```
 
 ####Custom Product Attributes
 ```php
-
 For drop-down Product Attributes use the following code 
 --------------------------------------------------------------------------------------
 <?php echo $_product->getAttributeText('attribute_name') ?>
@@ -87,9 +87,7 @@ Display Product Attributes Globally
  <?php echo 'Attribute Title: '.$product->getResource()->getAttribute('ATTRIBUTE_CODE_HERE')->getFrontend()->getValue($product); ?>  
 
 <?php endif; ?>
-
 ```
-
 
 ##User
 ```php
