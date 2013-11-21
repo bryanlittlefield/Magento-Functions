@@ -60,11 +60,38 @@ $_product = Mage::getModel('catalog/product')->loadByAttribute('sku', 'Eram18j4'
 
 //Load by ID (just load):
 $_product = Mage::getModel('catalog/product')->load($productID);
+
+```
+
+####Custom Product Attributes
+```php
+
+For drop-down Product Attributes use the following code 
+--------------------------------------------------------------------------------------
+<?php echo $_product->getAttributeText('attribute_name') ?>
+
+
+For all other Product Attribute types
+--------------------------------------------------------------------------------------
+<?php echo $_product->getAttributeName() ?>
+
+-or-
+
+<?php echo $_product['attribute_name'];?>
+
+
+Display Product Attributes Globally
+--------------------------------------------------------------------------------------
+<?php if($product->getResource()->getAttribute('ATTRIBUTE_CODE_HERE')->getFrontend()->getValue($product)) : ?> 
+
+ <?php echo 'Attribute Title: '.$product->getResource()->getAttribute('ATTRIBUTE_CODE_HERE')->getFrontend()->getValue($product); ?>  
+
+<?php endif; ?>
+
 ```
 
 
 ##User
-
 ```php
 /* Check if the customer is logged in or not */
 if (Mage::getSingleton('customer/session')->isLoggedIn()) {
