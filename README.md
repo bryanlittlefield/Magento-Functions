@@ -11,6 +11,7 @@ A Resource of Magento Functions
 2. [Product](#product)
 3. [User](#user)
 4. [Cart](#cart)
+5. [Checkout](#checkout)
 
 ***
 
@@ -119,4 +120,22 @@ foreach ($cartItems as $item) {
  Zend_Debug::dump(Mage::getModel('catalog/product')->load($item->getProduct()->getId())->getMyCustomAttribute());
 }
 ```
+
+##Checkout
+
+
+####Shipping
+```php
+Retrive Shipping Method from Quote
+--------------------------------------------------------------------------------------
+$rate = Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getShippingRatesCollection();
+
+$rate->getCarrier(); // This will provide you with the carrier code
+$rate->getCarrierTitle(); // This will give you the carrier title
+$rate->getCode(); // This will give you **current shipping method** code
+$rate->getMethod(); // This will provide you with the **shipping method** code
+$rate->getMethodTitle(); // This will tell you current shipping method title
+$rate->getMethodDescription(); // And this is the description of the current shipping method and **it could be NULL**
+```
+
 
