@@ -170,7 +170,3 @@ Render Block within .phtml
 ```
 
 
-
-
-<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('my-new-block')->toHtml() ?>
-
