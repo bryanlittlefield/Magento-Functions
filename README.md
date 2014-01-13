@@ -12,6 +12,7 @@ A Resource of Magento Functions
 3. [User](#user)
 4. [Cart](#cart)
 5. [Checkout](#checkout)
+6. [General](#general)
 
 ***
 
@@ -138,4 +139,38 @@ $rate->getMethodTitle(); // This will tell you current shipping method title
 $rate->getMethodDescription(); // And this is the description of the current shipping method and **it could be NULL**
 ```
 
+##General
+
+
+####Working with Blocks
+
+```
+Step 1:
+Create your static block
+ 
+Step 2:
+Open the file that references the page you intend to put the block into IE‘page.xml’.
+ 
+Step 3:
+Add this to the appropriate place in the XML file
+ 
+<block type="cms/block" name="xxxxxx">
+  <action method="setBlockId"><block_id>xxxxxx</block_id></action>
+</block>
+ 
+Step 4:
+Navigate your way to the template folder (app > design > frontend > default > your_theme > template) Open the file that you would like the block to appear in and insert the following code in the appropriate position where xxxxxx is the ‘Identifier’ you set earlier when creating your block.
+ 
+<?php echo $this->getChildHtml('xxxxxx') ?>
+ 
+ 
+Render Block within .phtml
+ 
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('my-new-block')->toHtml() ?>
+```
+
+
+
+
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('my-new-block')->toHtml() ?>
 
