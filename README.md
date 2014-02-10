@@ -13,6 +13,7 @@ A Resource of Magento Functions
 4. [Cart](#cart)
 5. [Checkout](#checkout)
 6. [General](#general)
+7. [Account](#account)
 
 ***
 
@@ -168,5 +169,49 @@ Render Block within .phtml
  
 <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('my-new-block')->toHtml() ?>
 ```
+
+##Account
+
+
+##Navigation Links
+
+####Removing Navigation Links
+In local.xml add the following
+```
+<customer_account>
+    <reference name="customer_account_navigation" >
+            <action method="removeLinkByName"><name>recurring_profiles</name></action>
+            <action method="removeLinkByName"><name>billing_agreements</name></action>
+            <action method="removeLinkByName"><name>reviews</name></action>
+            <action method="removeLinkByName"><name>downloadable_products</name></action>
+            <action method="removeLinkByName"><name>OAuth Customer Tokens</name></action>
+
+            <action method="removeLinkByName"><name>account</name></action>
+            <action method="removeLinkByName"><name>account_edit</name></action>
+            <action method="removeLinkByName"><name>address_book</name></action>
+            <action method="removeLinkByName"><name>orders</name></action>
+            <action method="removeLinkByName"><name>tags</name></action>
+            <action method="removeLinkByName"><name>wishlist</name></action>
+            <action method="removeLinkByName"><name>newsletter</name></action>
+    </reference>
+</customer_account>
+
+```
+####Adding Navigation Links
+In local.xml add the following
+```
+<customer_account>
+    <reference name="customer_account_navigation">
+        <action method="addLink">
+            <name>my_new_section</name>
+            <path>module/index/index</path>
+            <!-- <url>http://mydomain.com</url> -->
+            <label>Module Account View</label>
+            <params><_secure>true</_secure></params>
+        </action>
+    </reference>
+</customer_account>
+```
+
 
 
