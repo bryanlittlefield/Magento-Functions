@@ -173,9 +173,9 @@ Render Block within .phtml
 ##Account
 
 
-##Navigation Links
+####Navigation Links
 
-####Removing Navigation Links
+#####Removing Navigation Links
 In local.xml add the following
 ```
 <customer_account>
@@ -197,7 +197,7 @@ In local.xml add the following
 </customer_account>
 
 ```
-####Adding Navigation Links
+#####Adding Navigation Links
 In local.xml add the following
 ```
 <customer_account>
