@@ -170,6 +170,15 @@ Render Block within .phtml
 <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('my-new-block')->toHtml() ?>
 ```
 
+####Passing Data Through Blocks
+```
+<!-- Push Data to Child Block -->
+<?php $this->getChild('block_name')->setData("product", $_product); ?>
+
+<!-- Set Product Data Pulled through from view template file -->
+<?php  $_product = $this->getData('product'); ?>
+```
+
 ##Account
 
 
