@@ -92,6 +92,13 @@ Display Product Attributes Globally
 
 <?php endif; ?>
 ```
+####Product Stock Count
+```
+<?php 
+$stock_count = (int) Mage::getModel(’cataloginventory/stock_item’)->loadByProduct($this->getProduct())->getQty(); 
+echo $stock_count;
+?>
+```
 
 ##User
 ```php
