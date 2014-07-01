@@ -14,6 +14,7 @@ A Resource of Magento Functions
 5. [Checkout](#checkout)
 6. [General](#general)
 7. [Account](#account)
+8. [Working w/ URL's] (#urls)
 
 ***
 
