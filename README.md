@@ -4,7 +4,7 @@ Magento-Functions
 A Resource of Magento Functions
 
 
-####Table of Contents
+#### Table of Contents
 ***
 
 1. [Category](#category)
@@ -19,11 +19,11 @@ A Resource of Magento Functions
 ***
 
 
-##Category
+## Category
 
-##Product
+## Product
 
-####Fetch Product Collection
+#### Fetch Product Collection
 ```php
 
 $collection = Mage::getModel('catalog/product')
@@ -33,7 +33,7 @@ $collection = Mage::getModel('catalog/product')
               ->setOrder('name', 'ASC');
 ```
 
-####Magento Load Products
+#### Magento Load Products
 ```php
 Individual Product Helper
 --------------------------------------------------------------------------------------
@@ -52,7 +52,7 @@ $_product = Mage::getModel('catalog/product')->loadByAttribute('sku', '234SKU93'
 $_product = Mage::getModel('catalog/product')->load($productID);
 ```
 
-####Fetch Default Product Info
+#### Fetch Default Product Info
 ```php
 <?php
 echo $_product->getShortDescription(); //product's short description
@@ -69,7 +69,7 @@ echo $_product->getAvailability(); //product's thumbnail image url
 ?>
 ```
 
-####Custom Product Attributes
+#### Custom Product Attributes
 ```php
 For drop-down Product Attributes use the following code 
 --------------------------------------------------------------------------------------
@@ -93,7 +93,7 @@ Display Product Attributes Globally
 
 <?php endif; ?>
 ```
-####Product Stock Count
+#### Product Stock Count
 ```php
 <?php 
 $stock_count = (int) Mage::getModel(’cataloginventory/stock_item’)->loadByProduct($this->getProduct())->getQty(); 
@@ -101,7 +101,7 @@ echo $stock_count;
 ?>
 ```
 
-##User
+## User
 ```php
 /* Check if the customer is logged in or not */
 if (Mage::getSingleton('customer/session')->isLoggedIn()) {
@@ -120,7 +120,7 @@ if (Mage::getSingleton('customer/session')->isLoggedIn()) {
 }
 ```
 
-##Cart
+## Cart
 ```php
 /* Get all the items in the cart */
 $cartItems = Mage::getSingleton('checkout/session')->getQuote()->getAllItems();
@@ -131,10 +131,10 @@ foreach ($cartItems as $item) {
 }
 ```
 
-##Checkout
+## Checkout
 
 
-####Shipping
+#### Shipping
 ```php
 Retrive Shipping Method from Quote
 --------------------------------------------------------------------------------------
@@ -148,10 +148,10 @@ $rate->getMethodTitle(); // This will tell you current shipping method title
 $rate->getMethodDescription(); // And this is the description of the current shipping method and **it could be NULL**
 ```
 
-##General
+## General
 
 
-####Working with Blocks
+#### Working with Blocks
 
 ```
 Step 1:
@@ -187,12 +187,12 @@ Render Block within .phtml
 <?php  $_product = $this->getData('product'); ?>
 ```
 
-##Account
+## Account
 
 
-####Navigation Links
+#### Navigation Links
 
-#####Removing Navigation Links
+##### Removing Navigation Links
 In local.xml add the following
 ```
 <customer_account>
@@ -214,7 +214,7 @@ In local.xml add the following
 </customer_account>
 
 ```
-#####Adding Navigation Links
+##### Adding Navigation Links
 In local.xml add the following
 ```
 <customer_account>
@@ -232,7 +232,7 @@ In local.xml add the following
 
 
 
-##URLs
+## URLs
 
 ```php
 
